@@ -15,7 +15,7 @@ let milliseconds = 0;
 let timerStatus = null;
 
 const handleIncrement = ()=>{
-	milliseconds = 10;
+	milliseconds += 10;
 		
 		if (milliseconds === 1000) {
 			milliseconds = 0;
@@ -42,14 +42,17 @@ const handleIncrement = ()=>{
 
 
 
-startButton.addEventListener('click', (e)=>{
-
+startButton.addEventListener('click', ()=>{
+	if (timerStatus !== null){
+		clearInterval(timerStatus);
+	}
+	timerStatus = setInterval(handleIncrement, 10);
 });
 
-pauseButton.addEventListener('click', ()=>{
+// pauseButton.addEventListener('click', ()=>{
 
-});
+// });
 
-resetButton.addEventListener('click', ()=>{
+// resetButton.addEventListener('click', ()=>{
 
-})
+// })
