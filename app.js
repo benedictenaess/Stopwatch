@@ -29,12 +29,17 @@ const handleIncrement = ()=>{
 				}
 			}
 		}
+		const formattedHours = (hours < 10) ? '0' + hours : hours;
+		const formattedMinutes = (minutes < 10) ? '0' + minutes : minutes;
+		const formattedSeconds = (seconds < 10) ? '0' + seconds : seconds;
+		const formattedMilliseconds = (milliseconds < 100) ? '0' + milliseconds : milliseconds;
+
+		hoursContainer.textContent = formattedHours
+		minutesContainer.textContent = formattedMinutes
+		secondsContainer.textContent = formattedSeconds
+		millisecondsContainer.textContent = formattedMilliseconds;
 }
 
-const formattedMilliseconds = (milliseconds < 100) ? '0' + milliseconds : milliseconds;
-const formattedSeconds = (seconds < 10) ? '0' + seconds : seconds;
-const formattedMinutes = (minutes < 10) ? '0' + minutes : minutes;
-const formattedHours = (hours < 10) ? '0' + hours : hours;
 
 
 startButton.addEventListener('click', (e)=>{
