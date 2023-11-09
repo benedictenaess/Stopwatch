@@ -31,6 +31,12 @@ const handleIncrement = ()=>{
 		}
 }
 
+const formattedMilliseconds = (milliseconds < 100) ? '0' + milliseconds : milliseconds;
+const formattedSeconds = (seconds < 10) ? '0' + seconds : seconds;
+const formattedMinutes = (minutes < 10) ? '0' + minutes : minutes;
+const formattedHours = (hours < 10) ? '0' + hours : hours;
+
+
 startButton.addEventListener('click', (e)=>{
 
 });
