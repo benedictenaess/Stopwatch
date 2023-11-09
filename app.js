@@ -49,9 +49,9 @@ startButton.addEventListener('click', ()=>{
 	timerStatus = setInterval(handleIncrement, 10);
 });
 
-// pauseButton.addEventListener('click', ()=>{
-
-// });
+pauseButton.addEventListener('click', ()=>{
+	clearInterval(timerStatus);
+});
 
 // resetButton.addEventListener('click', ()=>{
 
