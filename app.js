@@ -1,16 +1,16 @@
-const hoursContainer = document.querySelector('.hours');
-const minutesContainer = document.querySelector('.minutes');
-const secondsContainer = document.querySelector('.seconds');
 const millisecondsContainer = document.querySelector('.milliseconds');
+const secondsContainer = document.querySelector('.seconds');
+const minutesContainer = document.querySelector('.minutes');
+const hoursContainer = document.querySelector('.hours');
 
 const startButton = document.querySelector('.start-button');
 const pauseButton = document.querySelector('.pause-button');
 const resetButton = document.querySelector('.reset-button');
 
-let hours = 0;
-let minutes = 0;
-let seconds = 0;
 let milliseconds = 0;
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
 
 let timerStatus = null;
 
@@ -29,15 +29,15 @@ const handleIncrement = ()=>{
 				}
 			}
 		}
-		const formattedHours = (hours < 10) ? '0' + hours : hours;
-		const formattedMinutes = (minutes < 10) ? '0' + minutes : minutes;
-		const formattedSeconds = (seconds < 10) ? '0' + seconds : seconds;
 		const formattedMilliseconds = (milliseconds < 100) ? '0' + milliseconds : milliseconds;
+		const formattedSeconds = (seconds < 10) ? '0' + seconds : seconds;
+		const formattedMinutes = (minutes < 10) ? '0' + minutes : minutes;
+		const formattedHours = (hours < 10) ? '0' + hours : hours;
 
-		hoursContainer.textContent = formattedHours
-		minutesContainer.textContent = formattedMinutes
-		secondsContainer.textContent = formattedSeconds
 		millisecondsContainer.textContent = formattedMilliseconds;
+		secondsContainer.textContent = formattedSeconds
+		minutesContainer.textContent = formattedMinutes
+		hoursContainer.textContent = formattedHours
 }
 
 
@@ -53,6 +53,16 @@ pauseButton.addEventListener('click', ()=>{
 	clearInterval(timerStatus);
 });
 
-// resetButton.addEventListener('click', ()=>{
+resetButton.addEventListener('click', ()=>{
+	clearInterval(timerStatus);
 
-// })
+	milliseconds = 0;
+	seconds = 0;
+	minutes = 0;
+	hours = 0;
+
+	millisecondsContainer.textContent = '000';
+	secondsContainer.textContent = '00';
+	minutesContainer.textContent = '00';
+	hoursContainer.textContent = '00';
+});
