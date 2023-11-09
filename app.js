@@ -30,3 +30,15 @@ const handleIncrement = ()=>{
 			}
 		}
 }
+
+startButton.addEventListener('click', (e)=>{
+
+});
+
+pauseButton.addEventListener('click', ()=>{
+
+});
+
+resetButton.addEventListener('click', ()=>{
+
+})
